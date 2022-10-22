@@ -255,10 +255,21 @@ img {
     }
 
     &-title {
+      position: relative;
       font-size: 15px;
       font-weight: var(--font-semibold);
       color: var(--title-color);
       margin-bottom: 4px;
+
+      &::after {
+        position: absolute;
+        content: "";
+        bottom: 5px;
+        right: 110px;
+        width: 60px;
+        height: 4px;
+        background-color: var(--accent-color);
+      }
     }
 
     &-list {
