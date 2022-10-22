@@ -91,7 +91,7 @@ img {
   align-items: center;
   padding: 1rem 2rem;
   background: transparent;
-  border: 1.5px solid rgba(0, 0, 0, 0.2);
+  border: 1.5px solid rgba(0, 0, 0, 0.3);
   border-radius: 10rem;
   font-size: 15px;
   font-weight: var(--font-semibold);
@@ -113,4 +113,98 @@ img {
 
 .main {
   overflow: hidden;
+}
+
+// ===== HEADER SECTION =====
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--container-color);
+  z-index: var(--z-fixed);
+  transition: var(--transition-300);
+
+  &__container {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 18px;
+    font-weight: var(--font-bold);
+    color: var(--title-color);
+    text-transform: uppercase;
+
+    &-icon {
+      width: 42px;
+    }
+  }
+
+  &__menu {
+    @media screen and (max-width: 767px) {
+      position: fixed;
+      width: 85%;
+      top: 7rem;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      text-align: center;
+      padding: 2rem;
+      background-color: #f1f3f7;
+      border-radius: 1.5rem;
+      transition: var(--transition-300);
+      opacity: 0;
+      transform: scaleY(0);
+      transform-origin: top;
+    }
+
+    // SHOW MENU
+    &.show-menu {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__link {
+    font-size: 15px;
+    font-weight: var(--font-medium);
+    color: var(--title-color);
+    text-transform: uppercase;
+
+    &:hover {
+      color: var(--accent-color);
+    }
+  }
+
+  &__theme {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  &__button {
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+  }
+
+  &__toggle {
+    display: inline-flex;
+    font-size: 1.5rem;
+    color: var(--title-color);
+    cursor: pointer;
+  }
 }
