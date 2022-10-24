@@ -295,3 +295,18 @@ img {
     justify-self: center;
   }
 }
+
+// ===== MEDIA QUERIES =====
+// width 480px
+@media screen and (min-width: 480px) {
+  .home {
+    &__data,
+    &__img {
+      width: 400px;
+    }
+
+    &__title {
+      font-size: 42px;
+    }
+  }
+}
